@@ -18,6 +18,7 @@ project/plugins/project/
 .classpath
 .project
 .worksheet
+.settings
 bin/
 
 # IntelliJ
