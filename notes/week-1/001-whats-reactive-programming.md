@@ -22,8 +22,8 @@ That lead to a high degree of coupling, and such systems were hard to compose.
 
 An application is *scalable* if it is able to be expanded according to its usage. Typically we distinguish two directions of scaling:
 
-*scale up*: make use of parallelism in multi-core systems
-*scale out*: make use of multiple server nodes
+* scale up: make use of parallelism in multi-core systems
+* scale out: make use of multiple server nodes
 
 Important for scalability: minimizing shared mutable state. 
 Important for scale out: location transparency (it shouldn't matter *where* a location is located; could be at the same computer as a client or at some other computer across the internet. The functionality should stay the same) and resilience
