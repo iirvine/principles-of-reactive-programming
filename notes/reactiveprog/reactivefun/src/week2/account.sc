@@ -1,7 +1,7 @@
 package week2
 
 object account {
-  val acct = new BankAccount                      //> acct  : week2.BankAccount = week2.BankAccount@4ce32802
+  val acct = new BankAccount                      //> acct  : week2.BankAccount = week2.BankAccount@74b23210
   acct deposit 50
   acct withdraw 20                                //> res0: Int = 30
   acct withdraw 20                                //> res1: Int = 10
