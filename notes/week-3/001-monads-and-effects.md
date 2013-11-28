@@ -122,7 +122,7 @@ val treasure: Try[Treasure] =
     })
 ```
 
-`adventure.collectCoins()` is of type `Try[List[Coin]]` - but with `flatMap`, we get access to our list of coins! We can then use it to buy treasure. Any exceptions are automatically propagated by the implementation of `flatMap`.
+`adventure.collectCoins()` is of type `Try[List[Coin]]` - but with `flatMap`, we get access to our list of coins! We can then use it to buy treasure - tasty, tasty treasure. Any exceptions are automatically propagated by the implementation of `flatMap`.
 
 ###Using Comprehension syntax
 `flatMap` also lets us use `for` comprehensions:
@@ -147,3 +147,7 @@ We take that block and we try to execute it - if it succeeds, we just wrap it in
 Once we have the factory method, we can define `map`. We match on `this`, which is of type `Try[T]`. If `this` is of type `Success(value)`, we were successful! So, we can try to call `f` with the value - but we now have to use the `Try` constructor to make sure that if `f(value)` throws, we wrap it in a `Failure`, and if it succeeds, we wrap it with `Success`. If we failed, we just propagate the failure.
 
 One way to look at `Try` is that it *materializes exceptions* - our basic type `T` doesn't say anything about its exceptions, but the `Try[T]` makes all exceptions explicit. They're turned from something that happens in the control flow of our program into an actual *data value* that we can pattern match on with `map`.
+
+Here's the definition of `flatMap` for `Try[T]`:
+
+![img](http://i.imgur.com/7u5ZiOj.png)
